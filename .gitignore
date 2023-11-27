@@ -1,7 +1,7 @@
 #IDE
-*/.vscode
-*/.idea
-*/.fleet
+*.vscode
+*.idea
+*.fleet
 
 # Mac
 .DS_Store
@@ -14,10 +14,10 @@
 .env.production
 
 # Svelte
-web/node_modules
-web/build
-web/.svelte-kit
-web/package-lock.json
+/web/node_modules
+/web/build
+/web/.svelte-kit
+/web/package-lock.json
 */vite.config.js.timestamp-*
 */vite.config.ts.timestamp-*
 
@@ -34,3 +34,11 @@ web/package-lock.json
 /api/auth.json
 /api/npm-debug.log
 /api/yarn-error.log
+/api/bootstrap/cache
+/api/build/logs/
+/api/build/coverage/
+/api/database/.gitignore
+/api/storage/framework/cache/*
+/api/storage/framework/sessions/*
+/api/storage/framework/views/*
+/api/storage/logs/*
