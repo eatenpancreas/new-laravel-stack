@@ -15,11 +15,7 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
-$app->useEnvironmentPath(
-    dirname(__DIR__, 2)
-);
-
-header('Access-Control-Allow-Origin: ' . env('WEB_LOCAL_URL'));
+header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: *');
 header('Access-Control-Allow-Headers: *');
 
