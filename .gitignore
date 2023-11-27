@@ -1,0 +1,36 @@
+#IDE
+*/.vscode
+*/.idea
+*/.fleet
+
+# Mac
+.DS_Store
+
+# Dev environment
+.env
+.env.*
+!.env.example
+.env.backup
+.env.production
+
+# Svelte
+web/node_modules
+web/build
+web/.svelte-kit
+web/package-lock.json
+*/vite.config.js.timestamp-*
+*/vite.config.ts.timestamp-*
+
+# Laravel
+/api/.phpunit.cache
+/api/public/build
+/api/public/hot
+/api/public/storage
+/api/storage/*.key
+/api/vendor
+/api/.phpunit.result.cache
+/api/Homestead.json
+/api/Homestead.yaml
+/api/auth.json
+/api/npm-debug.log
+/api/yarn-error.log
