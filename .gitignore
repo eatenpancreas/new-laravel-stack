@@ -34,7 +34,7 @@
 /api/auth.json
 /api/npm-debug.log
 /api/yarn-error.log
-/api/bootstrap/cache
+/api/bootstrap/cache/*
 /api/build/logs/
 /api/build/coverage/
 /api/database/.gitignore
