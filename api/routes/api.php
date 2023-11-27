@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Lib\ApiLibrary;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return json_encode([
-        'status' => 'running'
-    ]);
-});
+Route::get('/', ApiLibrary::defaultResponder());
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
