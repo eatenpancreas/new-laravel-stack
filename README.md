@@ -1,11 +1,11 @@
 
-<h1 align="center">This project has been built with the SLaTT stack.</h1>
+<h1 align="center">This project has been built with the ReLaTT stack.</h1>
 
 
 <p align="center">
     <a href="https://svelte.dev" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg" 
-        width="80" alt="Svelte Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" 
+        width="80" alt="React Logo">
     </a>
     <a href="https://laravel.com" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" 
@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-    Svelte • Laravel • Tailwind • Typescript
+    React • Laravel • Tailwind • Typescript
 </p>
 
 
@@ -33,9 +33,9 @@
 2. `cd` into `web`
 3. run `npm install` to install all dependencies
 4. run `npm run dev` to start the development server
-5. **Svelte is now running** on `localhost:5173`.
+5. **React is now running** on `localhost:3000`.
 6. `cd` into `api`
 7. run `composer install` to install all dependencies
 8. run `php artisan serve` to start the development server
 9. **Laravel is now running** on `localhost:8000`.
-10. **You're all set!** Access the environment on localhost:5173.
+10. **You're all set!** Access the environment on localhost:3000.
