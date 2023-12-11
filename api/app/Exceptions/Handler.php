@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -26,5 +27,26 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    protected function invalidJson($request, ValidationException $exception): \Illuminate\Http\JsonResponse
+    {
+        $errors = [];
+        foreach ($exception->errors() as $field => $messages) {
+            foreach ($messages as $message) {
+                $errors[] = [
+                    'code' => $field,
+                    'message' => $message,
+                ];
+            }
+        }
+        
+        $message = $errors[0]['message'] . " (and " . count($errors) - 1 . " other error" . (count($errors) > 2 ? "s" : "") . " occurred.)";
+
+        return response()->json([
+            'res_type' => 'validation_error',
+            'message' => $message,
+            'error' => $errors,
+        ], $exception->status);
     }
 }

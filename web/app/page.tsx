@@ -1,17 +1,18 @@
 "use client";
 
 import React from "react";
-import {StatusResponse} from "@/app/api_interface/response";
+import {Response} from "@/app/lib/responses/response";
+import {getApi} from "@/app/lib/request";
 
 export default function Home() {
-    const [status, setStatus] = React.useState<StatusResponse>(
+    const [status, setStatus] = React.useState<Response.Status>(
         {status: "loading", res_type: "status"}
     );
     
     React.useEffect(() => {
-        fetch("http://127.0.0.1:8000/api/").then(
-            (res) => res.json()
-        ).then((status: StatusResponse) => setStatus(status));
+        getApi<Response.Status>("/", {}, "status", setStatus).catch((err) => {
+            setStatus({status: err.message, res_type: "status"});
+        });
     }, []);
     
     return (
