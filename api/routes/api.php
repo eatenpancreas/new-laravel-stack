@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Lib\ApiLibrary;
@@ -15,9 +16,16 @@ use App\Lib\ApiLibrary;
 |
 */
 
-Route::get('/', ApiLibrary::defaultResponder());
+Route::group(['middleware' => 'json'], function() {
+    Route::get('/', ApiLibrary::defaultResponder());
 
+    Route::group(['prefix' => 'auth'], function () {
+        Route::post('login', [AuthController::class, 'login']);
+        Route::post('register', [AuthController::class, 'register']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+        Route::group(['middleware' => 'auth:sanctum'], function() {
+            Route::get('logout', [AuthController::class, 'logout']);
+            Route::get('user', [AuthController::class, 'user']);
+        });
+    });
 });
